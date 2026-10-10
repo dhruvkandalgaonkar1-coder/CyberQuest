@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <title>CyberQuest — Digital Survival Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="CyberQuest home">
+        <span class="brand-mark">C<span>Q</span></span>
+        <span class="brand-copy"><strong>CYBER<span>QUEST</span></strong><small>DIGITAL SURVIVAL</small></span>
+      </a>
+
+      <div class="nav-label">COMMAND CENTER</div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="overview"><span class="nav-icon">◈</span> Overview</button>
+        <button class="nav-link" data-view="missions"><span class="nav-icon">⌁</span> Missions <span class="nav-count">03</span></button>
+        <button class="nav-link" data-view="inventory"><span class="nav-icon">▤</span> Inventory</button>
+        <button class="nav-link" data-view="stats"><span class="nav-icon">▥</span> Operative stats</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="network-status"><span class="status-dot"></span><span>NETWORK ONLINE</span><span class="signal-bars">▂▄▆</span></div>
+        <div class="player-mini">
+          <div class="mini-avatar" id="mini-avatar">?</div>
+          <div class="mini-copy"><strong id="mini-name">New operative</strong><span id="mini-level">LEVEL 01 · RECRUIT</span></div>
+          <button class="icon-button" data-action="rename" aria-label="Change operative name" title="Change operative name">···</button>
+        </div>
+        <div class="sidebar-footnote">CYBERQUEST v1.0 <span>LOCAL BUILD</span></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>HQ</span><span class="crumb-separator">/</span><strong id="breadcrumb-current">OVERVIEW</strong></div>
+        <div class="topbar-actions">
+          <div class="clock-chip"><span class="status-dot"></span> SESSION ACTIVE</div>
+          <button class="save-button" data-action="save"><span>↧</span> Save game</button>
+        </div>
+      </header>
+
+      <div id="screen" class="screen" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="name-modal" hidden>
+    <form class="name-modal" id="name-form">
+      <div class="modal-symbol">CQ<span>_</span></div>
+      <div class="eyebrow">NEW OPERATIVE DETECTED</div>
+      <h1>Enter the network.</h1>
+      <p>Choose your hacker name to initialize your CyberQuest profile.</p>
+      <label for="operative-name">OPERATIVE CALLSIGN</label>
+      <input id="operative-name" name="name" maxlength="22" autocomplete="nickname" placeholder="e.g. ghostbyte" required>
+      <button class="button button-primary modal-submit" type="submit">Initialize profile <span>↗</span></button>
+    </form>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
